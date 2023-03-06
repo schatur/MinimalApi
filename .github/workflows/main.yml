@@ -69,12 +69,4 @@ jobs:
           name: .net-app
           path: ${{ github.workspace }}/myapp
       
-      - name: Login with Github Container registry
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Publish to Github Container registry
-        run: docker push ghcr.io/anuraj/minimalapi:${{ env.BUILD_VERSION }}
+     
